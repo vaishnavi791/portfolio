@@ -1,0 +1,211 @@
+/* Custom Reset & Typography */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #ffffff;
+    color: #111111;
+    line-height: 1.6;
+    padding-top: 70px; /* Offset for the sticky navbar */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Light / Plain White Mode Base Variables */
+:root {
+    --bg-color: #ffffff;
+    --text-color: #111111;
+    --border-color: #dddddd;
+    --stack-color: #555555;
+    --nav-bg: #f9f9f9;
+}
+
+/* Dark Mode Variables mapped via body class */
+body.dark-theme {
+    --bg-color: #121212;
+    --text-color: #e0e0e0;
+    --border-color: #333333;
+    --stack-color: #aaaaaa;
+    --nav-bg: #1e1e1e;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Navigation Bar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--nav-bg);
+    border-bottom: 1px solid var(--border-color);
+    z-index: 1000;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.nav-container {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+}
+
+.nav-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    margin-right: 15px;
+    font-size: 0.95rem;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+.toggle-btn {
+    font-family: 'Times New Roman', Times, serif;
+    background: none;
+    border: 1px solid var(--text-color);
+    color: var(--text-color);
+    padding: 4px 10px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: background 0.2s;
+}
+
+.toggle-btn:hover {
+    background-color: var(--text-color);
+    color: var(--bg-color);
+}
+
+/* Header Section */
+header {
+    text-align: center;
+    justify-content: center;
+    margin-bottom: 40px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 20px;
+}
+
+/* Small Title Constraint */
+.author-name {
+    font-size: 1.6rem; 
+    font-weight: normal;
+    text-transform: lowercase;
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    font-size: 1rem;
+    font-style: italic;
+    color: var(--stack-color);
+    margin-bottom: 10px;
+}
+
+.social-links a {
+    color: var(--text-color);
+    text-decoration: underline;
+}
+
+/* General Layout Elements */
+section {
+    margin-bottom: 40px;
+}
+
+section h2 {
+    font-size: 1.3rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+/* Skills Grid Setup */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+}
+
+.skill-category {
+    margin-bottom: 10px;
+}
+
+.skill-category h4, .skill-category h5 {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 2px;
+}
+
+/* Project and Academic Cards */
+.project-card, .edu-category {
+    margin-bottom: 20px;
+}
+
+.project-card h3, .edu-category h3 {
+    font-size: 1.15rem;
+    font-weight: bold;
+}
+
+.tech-stack {
+    font-size: 0.9rem;
+    font-style: italic;
+    color: var(--stack-color);
+    margin-bottom: 8px;
+}
+
+.tech-stack a {
+    color: var(--text-color);
+}
+
+ul {
+    list-style-type: square;
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 5px;
+    font-size: 0.95rem;
+}
+
+/* Achievements Custom List Styling */
+.achievements-list li {
+    margin-bottom: 8px;
+}
+
+.achievements-list a {
+    color: var(--text-color);
+}
+
+/* Education Layout Styles */
+.edu-inst {
+    font-size: 1rem;
+}
+
+.edu-meta {
+    font-size: 0.9rem;
+    color: var(--stack-color);
+}
+
+/* Footer Section */
+footer {
+    text-align: center;
+    border-top: 1px solid var(--border-color);
+    padding-top: 20px;
+    margin-top: 5px;
+    font-size: 0.85rem;
+    color: var(--stack-color);
+}
