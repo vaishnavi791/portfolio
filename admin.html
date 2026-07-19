@@ -7,11 +7,11 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <style>
-        .admin-form { max-width: 500px; margin: 40px auto; padding: 20px; border: 1px solid var(--border-color); }
+        .admin-form { max-width: 500px; margin: 40px auto; padding: 20px; border: 1px solid var(--border-color); box-shadow: 0 4px 6px rgba(0,0,0,0.05); border-radius: 4px; }
         .form-group { margin-bottom: 15px; }
         .form-group label { display: block; font-weight: bold; margin-bottom: 5px; }
-        .form-group input, .form-group textarea { width: 100%; padding: 8px; font-family: 'Times New Roman', serif; border: 1px solid var(--border-color); background: transparent; color: var(--text-color); }
-        .submit-btn { background: var(--text-color); color: var(--bg-color); border: none; padding: 10px 15px; cursor: pointer; font-family: 'Times New Roman', serif; }
+        .form-group input, .form-group textarea { width: 100%; padding: 8px; font-family: 'Times New Roman', serif; border: 1px solid var(--border-color); background: transparent; color: var(--text-color); border-radius: 4px; }
+        .submit-btn { background: var(--text-color); color: var(--bg-color); border: none; padding: 10px 15px; cursor: pointer; font-family: 'Times New Roman', serif; border-radius: 4px; }
         .hidden { display: none; }
         .blog-card { padding: 15px; border: 1px solid var(--border-color); margin-bottom: 15px; text-align: left; }
         .blog-date { font-size: 0.85rem; opacity: 0.7; display: block; }
@@ -34,7 +34,7 @@
                 <input type="password" id="portal-password" placeholder="Leave blank if you are a reader">
             </div>
             <button id="btn-enter" class="submit-btn">Continue &rarr;</button>
-            <p style="margin-top: 15px;"><a href="index.html">&larr;back</a></p>
+            <p style="margin-top: 15px;"><a href="index.html">&larr; back</a></p>
         </div>
 
         <!-- Section 2: Reader Feed Box -->
@@ -48,7 +48,7 @@
         <div id="editor-box" class="admin-form hidden">
             <h2>Publish New Thought</h2>
             <div class="form-group">
-                <label for="post-title">Give it a  title</label>
+                <label for="post-title">Give it a title</label>
                 <input type="text" id="post-title" placeholder="e.g., Optimizing my CNN architecture">
             </div>
             <div class="form-group">
@@ -63,6 +63,7 @@
             <button id="btn-logout" style="background:none; border:none; text-decoration:underline; margin-left:10px; cursor:pointer;" class="toggle-btn">Logout</button>
         </div>
     </div>
+
     <script>
     const SUPABASE_URL = "https://pdgvvwyecssxghjmrdwl.supabase.co";
     const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBkZ3Z2d3llY3NzeGdoam1yZHdsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODQzODUwNTYsImV4cCI6MjA5OTk2MTA1Nn0.5uPdCEoWmAC9CEmCzHJhg64_JvO2jo0vR4MCUAsrIuw";
@@ -114,11 +115,9 @@
         }
     });
 
-    // Function to load feed
     async function fetchPortalBlogs() {
         const feedContainer = document.getElementById('portal-feed-container');
         try {
-            // 4. Update here to use supabaseClient
             const { data: blogs, error } = await supabaseClient
                 .from('blogs')
                 .select('*')
@@ -150,7 +149,6 @@
         }
     }
 
-    // Handle Publishing to Database Table
     document.getElementById('btn-publish').addEventListener('click', async (e) => {
         e.preventDefault();
         const title = document.getElementById('post-title').value.trim();
@@ -174,9 +172,7 @@
         }
     });
 
-    // Admin Session Logout
     document.getElementById('btn-logout').addEventListener('click', async () => {
-        // 6. Update here to use supabaseClient
         await supabaseClient.auth.signOut();
         window.location.reload();
     });
