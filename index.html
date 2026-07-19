@@ -7,13 +7,13 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <!-- Sticky Navigation Bar -->
+    <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-links">
                 <a href="#about">About</a>
                 <a href="#skills">Skills</a>
+                <a href="#blog">Blog</a>
                 <a href="#Projects">Projects</a>
                 <a href="#achievements">Achievements & Certifications</a>
                 <a href="#Education">Education</a>
@@ -24,7 +24,6 @@
     </nav>
 
     <div class="container" id="about">
-        <!-- Header -->
         <header>
             <h1 class="author-name">Vaishnavi kumari</h1>
             <p class="subtitle">Software Engineer | Proficient in Java Spring Boot and React.js | Passionate about AI/ML</p>
@@ -36,7 +35,7 @@
             </div>
         </header>
 
-        <!-- Technical Skills Section -->
+        <!-- Technical Skills  -->
         <section id="skills">
             <h2>Technical Skills</h2>
             <div class="skills-grid">
@@ -63,7 +62,7 @@
             </div>
         </section>
 
-        <!-- Software Engineering Projects Section -->
+        <!-- Software Engineering Projects-->
         <section id="Projects">
             <h2>Software Engineering Projects</h2>
             
@@ -94,7 +93,7 @@
             
             <div class="project-card">
                 <h3>Amazon Review Sentiment Analysis</h3>
-                <div class="tech-stack">Python, NLP, Pandas, Scikit-learn, NLTK, Matplotlib | <a href="https://github.com/vaishnavi791/Amazon-Food-Reviews-Sentiment-Analysis" target="_blank" rel="noopener">GitHub Link</a></div>
+                <div class="tech-stack">Python | NLP | Pandas | Scikit-learn | NLTK | Matplotlib | <a href="https://github.com/vaishnavi791/Amazon-Food-Reviews-Sentiment-Analysis" target="_blank" rel="noopener">GitHub Link</a></div>
                 <ul>
                     <li>Performed sentiment analysis on Amazon product reviews using Natural Language Processing techniques achieving 90% accuracy.</li>
                     <li>Preprocessed textual data through tokenization, stop-word removal, stemming, and vectorization for effective sentiment classification.</li>
@@ -104,20 +103,20 @@
             </div>
 
             <div class="project-card">
-                <h3>FreshInSight: Fruit Freshness Detection System</h3>
-                <div class="tech-stack">Python, CNN, TensorFlow/Keras, OpenCV, NumPy, Matplotlib | <a href="https://github.com/vaishnavi791/freshInsights" target="_blank" rel="noopener">GitHub Link</a></div>
-                <ul>
-                    <li>Developed a fruit freshness detection system using Convolutional Neural Networks (CNN) to classify fresh and rotten fruits from image datasets.</li>
-                    <li>Preprocessed image data using OpenCV and NumPy to improve model training and prediction accuracy.</li>
-                    <li>Trained and evaluated deep learning models for image classification and analyzed performance using accuracy and loss metrics.</li>
-                    <li>Built visualization workflows for model predictions and dataset interpretation to support real-time freshness analysis.</li>
-                </ul>
-            </div>
+            <h3>Cat vs. Dog Binary Image Classifier</h3>
+            <div class="tech-stack">Python | CNN | Tensorflow/keras | NumPy | Matplotlib | <a href="https://colab.research.google.com/drive/1UznToC7G0L_FJZr_DDH8YcK8lVnp5viU#scrollTo=cX1t7YXG7zWE" target="_blank" rel="noopener">Colab Link</a></div>
+            <ul>
+                <li>Developed a deep learning image classifier using a custom sequential Convolutional Neural Network (CNN) architecture to distinguish between cats and dogs with an overall accuracy of 78%.</li>
+                <li>Implemented a robust preprocessing pipeline including dynamic image resizing to 128x128 pixels, pixel normalization, and data augmentation to mitigate overfitting.</li>
+                <li>Designed a multi-layered network feature extractor consisting of alternating Conv2D and MaxPooling2D layers followed by a 128-unit dense layer and a single-neuron binary output node.</li>
+            </ul>
+        </div>
         </section>
-
+        </section>
         <!-- Achievements Section -->
         <section id="achievements">
             <h2>Achievements & Certification</h2>
+            <a href="https://drive.google.com/drive/folders/1uybQT0VkGDc2mxZFrmwgobZf-I8zifGX?usp=sharing" target="_blank" rel="noopener">Link</a>
             <ul class="achievements-list">
                 <li>Solved 200+ DSA problems on LeetCode focusing on arrays, linkedList and different data structures. <a href="https://leetcode.com/u/vaishnavileet-22/" target="_blank" rel="noopener">[LeetCode Link]</a></li>
                 <li>Participated in Amazon ML summer school 2026</li>
@@ -142,14 +141,22 @@
                 <p class="edu-meta">2021 - 2024 | Percentage: 80.42%</p>
             </div>
         </section>
+        <!-- Blog Section -->
+        <section id="blog">
+            <h2>Latest Thoughts & Tech Logs</h2>
+            <p style="margin-bottom: 20px;">
+                <a href="admin.html" class="read-more" style="text-decoration: underline;">Click here to read the blogs!&rarr;</a>
+            </p>
+            <div class="blog-grid">
+                <!-- Supabase will dynamically inject your post cards right here -->
+            </div>
+        </section>
 
-        <!-- Footer -->
         <footer>
             <p>&copy; 2026 Vaishnavi Kumari :) All rights reserved.</p>
         </footer>
     </div>
-
-    <!-- Script connection -->
-    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.43.4/dist/umd/supabase.js"></script>
+    <script type="module" src="script.js"></script>
 </body>
 </html>
