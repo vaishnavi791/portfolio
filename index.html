@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Vaishnavi Kumari</title>
-  <script type="module" crossorigin src="/portfolio/assets/index-8pJ5t2KP.js"></script>
+  <script type="module" crossorigin src="/portfolio/assets/index-BUz_Z6yv.js"></script>
   <link rel="stylesheet" crossorigin href="/portfolio/assets/index-CDBlPh-O.css">
 </head>
 <body>
@@ -14,6 +14,7 @@
             <div class="nav-links">
                 <a href="#about">About</a>
                 <a href="#skills">Skills</a>
+                <a href="#blog">Blog</a>
                 <a href="#Projects">Projects</a>
                 <a href="#achievements">Achievements & Certifications</a>
                 <a href="#Education">Education</a>
@@ -93,7 +94,7 @@
             
             <div class="project-card">
                 <h3>Amazon Review Sentiment Analysis</h3>
-                <div class="tech-stack">Python, NLP, Pandas, Scikit-learn, NLTK, Matplotlib | <a href="https://github.com/vaishnavi791/Amazon-Food-Reviews-Sentiment-Analysis" target="_blank" rel="noopener">GitHub Link</a></div>
+                <div class="tech-stack">Python | NLP | Pandas | Scikit-learn | NLTK | Matplotlib | <a href="https://github.com/vaishnavi791/Amazon-Food-Reviews-Sentiment-Analysis" target="_blank" rel="noopener">GitHub Link</a></div>
                 <ul>
                     <li>Performed sentiment analysis on Amazon product reviews using Natural Language Processing techniques achieving 90% accuracy.</li>
                     <li>Preprocessed textual data through tokenization, stop-word removal, stemming, and vectorization for effective sentiment classification.</li>
@@ -104,19 +105,19 @@
 
             <div class="project-card">
             <h3>Cat vs. Dog Binary Image Classifier</h3>
-            <div class="tech-stack">Python, CNN, Tensorflow/keras  NumPy, Matplotlib | <a href="https://github.com/vaishnavi791" target="_blank" rel="noopener">GitHub Link</a></div>
+            <div class="tech-stack">Python | CNN | Tensorflow/keras | NumPy | Matplotlib | <a href="https://colab.research.google.com/drive/1UznToC7G0L_FJZr_DDH8YcK8lVnp5viU#scrollTo=cX1t7YXG7zWE" target="_blank" rel="noopener">Colab Link</a></div>
             <ul>
                 <li>Developed a deep learning image classifier using a custom sequential Convolutional Neural Network (CNN) architecture to distinguish between cats and dogs with an overall accuracy of 78%.</li>
                 <li>Implemented a robust preprocessing pipeline including dynamic image resizing to 128x128 pixels, pixel normalization, and data augmentation to mitigate overfitting.</li>
                 <li>Designed a multi-layered network feature extractor consisting of alternating Conv2D and MaxPooling2D layers followed by a 128-unit dense layer and a single-neuron binary output node.</li>
-                <li>Evaluated model performance using detailed classification reports, achieving well-balanced class metrics including an F1-score of 0.76 for Class 0 and 0.79 for Class 1 over a 2,000-image test block.</li>
             </ul>
         </div>
         </section>
-
+        </section>
         <!-- Achievements Section -->
         <section id="achievements">
             <h2>Achievements & Certification</h2>
+            <a href="https://drive.google.com/drive/folders/1uybQT0VkGDc2mxZFrmwgobZf-I8zifGX?usp=sharing" target="_blank" rel="noopener">Link</a>
             <ul class="achievements-list">
                 <li>Solved 200+ DSA problems on LeetCode focusing on arrays, linkedList and different data structures. <a href="https://leetcode.com/u/vaishnavileet-22/" target="_blank" rel="noopener">[LeetCode Link]</a></li>
                 <li>Participated in Amazon ML summer school 2026</li>
@@ -141,10 +142,21 @@
                 <p class="edu-meta">2021 - 2024 | Percentage: 80.42%</p>
             </div>
         </section>
+        <!-- Blog Section -->
+        <section id="blog">
+            <h2>Latest Thoughts & Tech Logs</h2>
+            <p style="margin-bottom: 20px;">
+                <a href="admin.html" class="read-more" style="text-decoration: underline;">Click here to read the blogs!&rarr;</a>
+            </p>
+            <div class="blog-grid">
+                <!-- Supabase will dynamically inject your post cards right here -->
+            </div>
+        </section>
 
         <footer>
             <p>&copy; 2026 Vaishnavi Kumari :) All rights reserved.</p>
         </footer>
-    </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.43.4/dist/umd/supabase.js"></script>
 </body>
 </html>
