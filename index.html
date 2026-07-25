@@ -3,159 +3,208 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Vaishnavi Kumari</title>
+    <title>Vaishnavi Kumari | Cyber Terminal Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Navigation Bar -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-links">
-                <a href="#about">About</a>
-                <a href="#skills">Skills</a>
-                <a href="#blog">Blog</a>
-                <a href="#Projects">Projects</a>
-                <a href="#achievements">Achievements & Certifications</a>
-                <a href="#Education">Education</a>
+    <!-- CRT Screen Overlay Effects -->
+    <div class="crt-scanlines"></div>
+    
+    <!-- Outer Terminal Window Frame -->
+    <div class="terminal-window">
+        
+        <!-- Terminal Top Header Bar -->
+        <div class="terminal-header">
+            <div class="header-left">
+                <span class="status-indicator"></span>
+                <span class="header-title">SYS_STATUS: ONLINE | VAISHNAVI_OS v2026</span>
             </div>
-            <!-- Theme Toggle Button -->
-            <button id="theme-toggle" class="toggle-btn" aria-label="Toggle Dark Mode">Dark Mode</button>
+            <div class="header-right">
+                <button id="theme-toggle" class="toggle-btn" aria-label="Toggle Theme">[THEME: NEON_GREEN]</button>
+            </div>
         </div>
-    </nav>
 
-    <div class="container" id="about">
-        <header>
-            <h1 class="author-name">Vaishnavi kumari</h1>
-            <p class="subtitle">Software Engineer | Proficient in Java Spring Boot and React.js | Passionate about AI/ML</p>
-            <div class="social-links">
-                <a href="https://github.com/vaishnavi791" target="_blank" rel="noopener">GitHub</a> | 
-                <a href="https://linkedin.com/in/vaishnavi-kumari-150962277" target="_blank" rel="noopener">LinkedIn</a> | 
-                <a href="https://leetcode.com/u/vaishnavileet-22/" target="_blank" rel="noopener">LeetCode</a> |
-                <a href="mailto:vaishnavigupta170@gmail.com">Email</a>
-            </div>
-        </header>
+        <!-- Terminal Tab Navigation -->
+        <nav class="terminal-tabs">
+            <a href="#about" class="tab-link active">[01_ABOUT]</a>
+            <a href="#skills" class="tab-link">[02_SKILLS]</a>
+            <a href="#Projects" class="tab-link">[03_PROJECTS]</a>
+            <a href="#ml-projects" class="tab-link">[04_ML_PROJECTS]</a>
+            <a href="#achievements" class="tab-link">[05_ACHIEVEMENTS]</a>
+            <a href="#Education" class="tab-link">[06_EDUCATION]</a>
+            <a href="#blog" class="tab-link">[07_BLOGS]</a>
+        </nav>
 
-        <!-- Technical Skills  -->
-        <section id="skills">
-            <h2>Technical Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h4>Programming Languages</h4>
-                    <p>Java, JavaScript and Python</p>
-                </div>
-                <div class="skill-category">
-                    <h4>Frameworks</h4>
-                    <p>Spring Boot, Node.js</p>
-                </div>
-                <div class="skill-category">
-                    <h4>Databases</h4>
-                    <p>MySQL, MongoDB</p>
-                </div>
-                <div class="skill-category">
-                    <h4>Tools & Technologies</h4>
-                    <p>Git, GitHub, REST APIs, Postman, Google colab</p>
-                </div>
-                <div class="skill-category">
-                    <h4>Core Concepts</h4>
-                    <p>Data Structures & Algorithms, OOPs, DBMS, OS, Authentication & Authorization (JWT), Machine learning algorithm</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Software Engineering Projects-->
-        <section id="Projects">
-            <h2>Software Engineering Projects</h2>
+        <!-- Main Scrolling Terminal Content Area -->
+        <div class="terminal-body" id="terminal-body">
             
-            <div class="project-card">
-                <h3>E-commerce Backend System</h3>
-                <div class="tech-stack">Java | Spring Boot | REST API | MySQL | <a href="https://github.com/vaishnavi791/E-Commerce-Backend-System" target="_blank" rel="noopener">GitHub Link</a></div>
-                <ul>
-                    <li>Built RESTful APIs for product management, cart handling, order processing, and user authentication.</li>
-                    <li>Designed database schemas for users, products, and orders ensuring reliable transaction handling and data consistency.</li>
-                    <li>Performed API testing and validation using Postman to verify functionality, error handling, and response accuracy.</li>
-                </ul>
-            </div>
+            <!-- Section: Header / About -->
+            <header id="about" class="terminal-section">
+                <div class="cli-prompt">17@terminal:~$ whoami</div>
+                <h1 class="author-name">
+                    Vaishnavi Kumari 
+                    <!-- SVG Pixel Cat Companion -->
+                    <span class="pixel-cat-wrapper" title="Cat Companion">
+                        <svg class="pixel-cat-svg" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Ears -->
+                            <path fill="currentColor" d="M2 1h3v2H2zM11 1h3v2h-3z"/>
+                            <!-- Head -->
+                            <path fill="currentColor" d="M2 3h12v4H2z"/>
+                            <!-- Collar / Neck -->
+                            <path fill="currentColor" d="M4 7h8v1H4z"/>
+                            <!-- Body -->
+                            <path fill="currentColor" d="M3 8h10v5H3z"/>
+                            <!-- Tail -->
+                            <path fill="currentColor" d="M13 6h2v6h-2zM12 5h2v1h-2z"/>
+                            <!-- Paws -->
+                            <path fill="currentColor" d="M4 13h3v2H4zM9 13h3v2H9z"/>
+                        </svg>
+                    </span>
+                </h1>
+                <p class="subtitle">Aspirng Software Engineer | Proficient in Java, Spring Boot and React.js | Passionate about AI/ML</p>
+                <div class="social-links">
+                    <span class="prompt-arrow">&gt;</span> <a href="https://github.com/vaishnavi791" target="_blank" rel="noopener">[GitHub]</a> | 
+                    <a href="https://linkedin.com/in/vaishnavi-kumari-150962277" target="_blank" rel="noopener">[LinkedIn]</a> | 
+                    <a href="https://leetcode.com/u/vaishnavileet-22/" target="_blank" rel="noopener">[LeetCode]</a> |
+                    <a href="mailto:vaishnavigupta170@gmail.com">[Email]</a>
+                </div>
+            </header>
 
-            <div class="project-card">
-                <h3>Expense Tracker Application</h3>
-                <div class="tech-stack">Java | Spring Boot | REST APIs | MySQL | JWT authentication | React.js | <a href="https://github.com/vaishnavi791/expenseTracker" target="_blank" rel="noopener">GitHub Link</a></div>
-                <ul>
-                    <li>Developed a full-stack expense tracking system with a layered architecture featuring a secure Spring Boot backend and a minimal UI.</li>
-                    <li>Implemented stateless JWT authentication and dynamic expense tracking, including seamless CRUD operations, input validation, and real-time calculations.</li>
-                    <li>Used Git for version control, maintaining a highly structured project separation between the frontend and decoupled backend layers.</li>
-                </ul>
-            </div>           
-        </section>
+            <!-- Section: Technical Skills -->
+            <section id="skills" class="terminal-section">
+                <div class="cli-prompt">17@terminal:~$ cat ./skills.config</div>
+                <h2>Technical Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-category terminal-card">
+                        <h4>&gt; Programming Languages</h4>
+                        <p>Java, Python & JavaScript</p>
+                    </div>
+                    <div class="skill-category terminal-card">
+                        <h4>&gt; Frameworks</h4>
+                        <p>Spring Boot, Node.js</p>
+                    </div>
+                    <div class="skill-category terminal-card">
+                        <h4>&gt; Databases</h4>
+                        <p>MySQL, MongoDB</p>
+                    </div>
+                    <div class="skill-category terminal-card">
+                        <h4>&gt; Tools &amp; Technologies</h4>
+                        <p>Git, GitHub, REST APIs, Postman, Google colab</p>
+                    </div>
+                    <div class="skill-category terminal-card">
+                        <h4>&gt; Core Concepts</h4>
+                        <p>Data Structures &amp; Algorithms, OOPs, DBMS, OS, Authentication &amp; Authorization (JWT), Machine learning algorithm, EDA</p>
+                    </div>
+                </div>
+            </section>
 
-        <!-- Machine Learning Projects -->
-        <section id="ml-projects">
-            <h2>Machine Learning Projects</h2>
-            
-            <div class="project-card">
-                <h3>Amazon Review Sentiment Analysis</h3>
-                <div class="tech-stack">Python | NLP | Pandas | Scikit-learn | NLTK | Matplotlib | <a href="https://github.com/vaishnavi791/Amazon-Food-Reviews-Sentiment-Analysis" target="_blank" rel="noopener">GitHub Link</a></div>
-                <ul>
-                    <li>Performed sentiment analysis on Amazon product reviews using Natural Language Processing techniques achieving 90% accuracy.</li>
-                    <li>Preprocessed textual data through tokenization, stop-word removal, stemming, and vectorization for effective sentiment classification.</li>
-                    <li>Applied machine learning algorithms to classify customer reviews into positive, negative, and neutral sentiments.</li>
-                    <li>Visualized sentiment distribution and review trends to extract customer behavior insights and product feedback patterns.</li>
-                </ul>
-            </div>
+            <!-- Section: Software Engineering Projects -->
+            <section id="Projects" class="terminal-section">
+                <div class="cli-prompt">17@terminal:~$ ./exec_swe_projects.sh</div>
+                <h2>Software Engineering Projects</h2>
+                
+                <div class="project-card terminal-card">
+                    <h3>E-commerce Backend System</h3>
+                    <div class="tech-stack">Java | Spring Boot | REST API | MySQL | <a href="https://github.com/vaishnavi791/E-Commerce-Backend-System" target="_blank" rel="noopener">[GitHub Link]</a></div>
+                    <ul>
+                        <li>Built RESTful APIs for product management, cart handling, order processing, and user authentication.</li>
+                        <li>Designed database schemas for users, products, and orders ensuring reliable transaction handling and data consistency.</li>
+                        <li>Performed API testing and validation using Postman to verify functionality, error handling, and response accuracy.</li>
+                    </ul>
+                </div>
 
-            <div class="project-card">
-            <h3>Cat vs. Dog Binary Image Classifier</h3>
-            <div class="tech-stack">Python | CNN | Tensorflow/keras | NumPy | Matplotlib | <a href="https://colab.research.google.com/drive/1UznToC7G0L_FJZr_DDH8YcK8lVnp5viU#scrollTo=cX1t7YXG7zWE" target="_blank" rel="noopener">Colab Link</a></div>
-            <ul>
-                <li>Developed a deep learning image classifier using a custom sequential Convolutional Neural Network (CNN) architecture to distinguish between cats and dogs with an overall accuracy of 78%.</li>
-                <li>Implemented a robust preprocessing pipeline including dynamic image resizing to 128x128 pixels, pixel normalization, and data augmentation to mitigate overfitting.</li>
-                <li>Designed a multi-layered network feature extractor consisting of alternating Conv2D and MaxPooling2D layers followed by a 128-unit dense layer and a single-neuron binary output node.</li>
-            </ul>
+                <div class="project-card terminal-card">
+                    <h3>Expense Tracker Application</h3>
+                    <div class="tech-stack">Java | Spring Boot | REST APIs | MySQL | React.js | <a href="https://github.com/vaishnavi791/expenseTracker" target="_blank" rel="noopener">[GitHub Link]</a></div>
+                    <ul>
+                        <li>Built a full-stack expense tracking application with Spring Boot, React, and MySQL using layered backend architecture.</li>
+                        <li>Designed REST APIs for expense management with CRUD operations, service-layer logic, database persistence, and real-time expense calculations.</li>
+                        <li>Maintained clean frontend-backend separation and version control using Git.</li>
+                    </ul>
+                </div>          
+            </section>
+
+            <!-- Section: Machine Learning Projects -->
+            <section id="ml-projects" class="terminal-section">
+                <div class="cli-prompt">17@terminal:~$ ./load_ml_models.py</div>
+                <h2>Machine Learning Projects</h2>
+                
+                <div class="project-card terminal-card">
+                    <h3>Amazon Review Sentiment Analysis</h3>
+                    <div class="tech-stack">Python | NLP | Pandas | Scikit-learn | NLTK | Matplotlib | <a href="https://github.com/vaishnavi791/Amazon-Food-Reviews-Sentiment-Analysis" target="_blank" rel="noopener">[GitHub Link]</a></div>
+                    <ul>
+                        <li>Performed sentiment analysis on Amazon product reviews using Natural Language Processing techniques achieving 90% accuracy.</li>
+                        <li>Preprocessed textual data through tokenization, stop-word removal, stemming, and vectorization for effective sentiment classification.</li>
+                        <li>Applied machine learning algorithms to classify customer reviews into positive, negative, and neutral sentiments.</li>
+                        <li>Visualized sentiment distribution and review trends to extract customer behavior insights and product feedback patterns.</li>
+                    </ul>
+                </div>
+
+                <div class="project-card terminal-card">
+                    <h3>Cat vs. Dog Binary Image Classifier</h3>
+                    <div class="tech-stack">Python | CNN | Tensorflow/keras | NumPy | Matplotlib | <a href="https://colab.research.google.com/drive/1UznToC7G0L_FJZr_DDH8YcK8lVnp5viU#scrollTo=cX1t7YXG7zWE" target="_blank" rel="noopener">[Colab Link]</a></div>
+                    <ul>
+                        <li>Developed a deep learning image classifier using a custom sequential Convolutional Neural Network (CNN) architecture to distinguish between cats and dogs with an overall accuracy of 78%.</li>
+                        <li>Implemented a robust preprocessing pipeline including dynamic image resizing to 128x128 pixels, pixel normalization, and data augmentation to mitigate overfitting.</li>
+                        <li>Designed a multi-layered network feature extractor consisting of alternating Conv2D and MaxPooling2D layers followed by a 128-unit dense layer and a single-neuron binary output node.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Section: Achievements -->
+            <section id="achievements" class="terminal-section">
+                <div class="cli-prompt">17@terminal:~$ cat ./achievements.log</div>
+                <h2>Achievements &amp; Certification</h2>
+                <div class="cert-drive-link">
+                    <span class="prompt-arrow">&gt;</span> Verification Drive: <a href="https://drive.google.com/drive/folders/1uybQT0VkGDc2mxZFrmwgobZf-I8zifGX?usp=sharing" target="_blank" rel="noopener">[Drive Folder Link]</a>
+                </div>
+                <ul class="achievements-list">
+                    <li>Solved 200+ DSA problems on LeetCode focusing on arrays, linkedList and different data structures. <a href="https://leetcode.com/u/vaishnavileet-22/" target="_blank" rel="noopener">[LeetCode Link]</a></li>
+                    <li>Participated in Amazon ML summer school 2026</li>
+                    <li>Currently working as an AI/ML intern at Infosys SpringBoard</li>
+                    <li>Java (Basics) - HackerRank Certified | Frontend (React) - HackerRank Certified</li>
+                    <li>MongoDB Overview: Core Concepts and Architecture - MongoDB Credential</li>
+                    <li>Introduction to AI - LinkedIn Learning Community Certification</li>
+                </ul>
+            </section>
+
+            <!-- Section: Education -->
+            <section id="Education" class="terminal-section">
+                <div class="cli-prompt">17@terminal:~$ query_db --education</div>
+                <h2>Education</h2>
+                <div class="edu-category terminal-card">
+                    <h3>Major in Computer Science &amp; Data Science</h3>
+                    <p class="edu-inst">&gt; Pranveer Singh Institute of Technology, Kanpur</p>
+                    <p class="edu-meta">2024 - 2027 | Current SGPA: 8.38</p>
+                </div>
+                <div class="edu-category terminal-card">
+                    <h3>Diploma in Electronics Engineering</h3>
+                    <p class="edu-inst">&gt; Government Girls Polytechnic, Varanasi</p>
+                    <p class="edu-meta">2021 - 2024 | Percentage: 80.42%</p>
+                </div>
+            </section>
+
+            <!-- Section: Blog -->
+            <section id="blog" class="terminal-section">
+                <div class="cli-prompt">17@terminal:~$ tail -n 5 ./blogs.db</div>
+                <h2>Latest Thoughts &amp; Tech Logs</h2>
+                <p style="margin-bottom: 20px;">
+                    <a href="admin.html" class="read-more terminal-btn">&gt; Click here to read or write blogs &rarr;</a>
+                </p>
+                <div class="blog-grid">
+                    <!-- Supabase dynamically injects post cards here -->
+                </div>
+            </section>
+
+            <!-- Terminal Footer -->
+            <footer>
+                <p>&gt; &copy; 2026 Vaishnavi Kumari :) All rights reserved. [SYSTEM END OF LINE]</p>
+            </footer>
+
         </div>
-        </section>
-        </section>
-        <!-- Achievements Section -->
-        <section id="achievements">
-            <h2>Achievements & Certification</h2>
-            <a href="https://drive.google.com/drive/folders/1uybQT0VkGDc2mxZFrmwgobZf-I8zifGX?usp=sharing" target="_blank" rel="noopener">Link</a>
-            <ul class="achievements-list">
-                <li>Solved 200+ DSA problems on LeetCode focusing on arrays, linkedList and different data structures. <a href="https://leetcode.com/u/vaishnavileet-22/" target="_blank" rel="noopener">[LeetCode Link]</a></li>
-                <li>Participated in Amazon ML summer school 2026</li>
-                <li>Currently working as an AI/ML intern at Infosys SpringBoard</li>
-                <li>Java (Basics) - HackerRank Certified | Frontend (React) - HackerRank Certified</li>
-                <li>MongoDB Overview: Core Concepts and Architecture - MongoDB Credential</li>
-                <li>Introduction to AI - LinkedIn Learning Community Certification</li>
-            </ul>
-        </section>
-
-        <!-- Education Section -->
-        <section id="Education">
-            <h2>Education</h2>
-            <div class="edu-category">
-                <h3>Major in Computer Science & Data Science</h3>
-                <p class="edu-inst">Pranveer Singh Institute of Technology, Kanpur</p>
-                <p class="edu-meta">2024 - 2027 | Current SGPA: 8.38</p>
-            </div>
-            <div class="edu-category">
-                <h3>Diploma in Electronics Engineering</h3>
-                <p class="edu-inst">Government Girls Polytechnic, Varanasi</p>
-                <p class="edu-meta">2021 - 2024 | Percentage: 80.42%</p>
-            </div>
-        </section>
-        <!-- Blog Section -->
-        <section id="blog">
-            <h2>Latest Thoughts & Tech Logs</h2>
-            <p style="margin-bottom: 20px;">
-                <a href="admin.html" class="read-more" style="text-decoration: underline;">Click here to read the blogs!&rarr;</a>
-            </p>
-            <div class="blog-grid">
-                <!-- Supabase will dynamically inject your post cards right here -->
-            </div>
-        </section>
-
-        <footer>
-            <p>&copy; 2026 Vaishnavi Kumari :) All rights reserved.</p>
-        </footer>
     </div>
+
+    <!-- External Supabase SDK and Local Script -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.43.4/dist/umd/supabase.js"></script>
     <script type="module" src="script.js"></script>
 </body>

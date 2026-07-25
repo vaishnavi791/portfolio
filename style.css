@@ -1,203 +1,319 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&family=Fira+Code:wght@400;600&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+:root {
+    /* DEFAULT THEME: Cyber Matrix (Black BG + Neon Green) */
+    --bg-main: #050a05;
+    --terminal-bg: #091209;
+    --terminal-card-bg: #0d1a0d;
+    --text-primary: #00ff66;
+    --text-muted: #00b347;
+    --border-color: #00ff66;
+    --glow-shadow: rgba(0, 255, 102, 0.25);
+    --header-bg: #030803;
+    --scanline-color: rgba(0, 255, 102, 0.04);
+}
+
+/* ALTERNATE THEME: Neon Synth (Light Pink/White BG + Neon Pink) */
+body.dark-theme {
+    --bg-main: #ffffff;
+    --terminal-bg: #ffffff;
+    --terminal-card-bg: #ffe0e9;
+    --text-primary: #ff007f;
+    --text-muted: #b30059;
+    --border-color: #ff007f;
+    --glow-shadow: rgba(255, 0, 127, 0.2);
+    --header-bg: #fbcfe8;
+    --scanline-color: rgba(255, 0, 127, 0.03);
+}
+
+/* Base Body Setup */
 body {
-    font-family: 'Times New Roman', Times, serif;
-    background-color: #ffffff;
-    color: #111111;
-    line-height: 1.6;
-    padding-top: 70px; /* Offset for the sticky navbar */
+    font-family: 'VT323', 'Fira Code', monospace;
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    line-height: 1.5;
+    font-size: 1.15rem;
+    padding: 20px 10px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-:root {
-    --bg-color: #ffffff;
-    --text-color: #111111;
-    --border-color: #dddddd;
-    --stack-color: #555555;
-    --nav-bg: #f9f9f9;
-}
-
-/* Dark Mode Variables mapped via body class */
-body.dark-theme {
-    --bg-color: #121212;
-    --text-color: #e0e0e0;
-    --border-color: #333333;
-    --stack-color: #aaaaaa;
-    --nav-bg: #1e1e1e;
-}
-
-body {
-    background-color: var(--bg-color);
-    color: var(--text-color);
-}
-
-.container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-.navbar {
+/* CRT Scanlines Overlay */
+.crt-scanlines {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    background-color: var(--nav-bg);
-    border-bottom: 1px solid var(--border-color);
-    z-index: 1000;
-    transition: background-color 0.3s ease, border-color 0.3s ease;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(
+        var(--scanline-color) 50%, 
+        rgba(0, 0, 0, 0.25) 50%
+    );
+    background-size: 100% 4px;
+    z-index: 9999;
+    pointer-events: none;
 }
 
-.nav-container {
-    max-width: 800px;
-    margin: 0 auto;
+/* Outer Terminal Window Shell */
+.terminal-window {
+    width: 100%;
+    max-width: 900px;
+    background-color: var(--terminal-bg);
+    border: 3px solid var(--border-color);
+    box-shadow: 0 0 20px var(--glow-shadow), 8px 8px 0px rgba(0,0,0,0.5);
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Terminal Header HUD Bar */
+.terminal-header {
+    background-color: var(--header-bg);
+    border-bottom: 2px solid var(--border-color);
+    padding: 10px 16px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 12px 20px;
+    font-size: 1.1rem;
 }
 
-.nav-links a {
-    color: var(--text-color);
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.status-indicator {
+    width: 10px;
+    height: 10px;
+    background-color: var(--text-primary);
+    border-radius: 50%;
+    box-shadow: 0 0 8px var(--text-primary);
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+}
+
+/* Terminal Tab Bar */
+.terminal-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: var(--header-bg);
+    border-bottom: 2px solid var(--border-color);
+    padding: 4px 8px;
+    gap: 6px;
+}
+
+.tab-link {
+    color: var(--text-primary);
     text-decoration: none;
-    margin-right: 15px;
-    font-size: 0.95rem;
-}
-
-.nav-links a:hover {
-    text-decoration: underline;
-}
-
-.toggle-btn {
-    font-family: 'Times New Roman', Times, serif;
-    background: none;
-    border: 1px solid var(--text-color);
-    color: var(--text-color);
     padding: 4px 10px;
-    cursor: pointer;
-    font-size: 0.85rem;
-    transition: background 0.2s;
+    font-size: 1.05rem;
+    border: 1px solid transparent;
+    transition: all 0.2s ease;
 }
 
-.toggle-btn:hover {
-    background-color: var(--text-color);
-    color: var(--bg-color);
+.tab-link:hover, .tab-link.active {
+    background-color: var(--border-color);
+    color: var(--bg-main);
+    font-weight: bold;
 }
 
-header {
-    text-align: center;
-    justify-content: center;
-    margin-bottom: 40px;
-    border-bottom: 1px solid var(--border-color);
-    padding-bottom: 20px;
+/* Scrolling Terminal Inner Body */
+.terminal-body {
+    padding: 24px;
+    max-height: 80vh;
+    overflow-y: auto;
+    scroll-behavior: smooth;
 }
 
+.terminal-body::-webkit-scrollbar {
+    width: 8px;
+}
+.terminal-body::-webkit-scrollbar-track {
+    background: var(--header-bg);
+}
+.terminal-body::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+}
+
+/* CLI Command Prompt Prefix */
+.cli-prompt {
+    font-size: 1rem;
+    opacity: 0.8;
+    margin-bottom: 4px;
+    font-weight: bold;
+}
+
+.terminal-section {
+    margin-bottom: 36px;
+    padding-bottom: 12px;
+}
+
+/* Author Title & Dino Sprite */
 .author-name {
-    font-size: 1.6rem; 
-    font-weight: normal;
-    text-transform: lowercase;
-    margin-bottom: 5px;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--text-primary);
+    text-shadow: 0 0 10px var(--glow-shadow);
+}
+
+.pixel-cat-wrapper {
+    display: inline-flex;
+    align-items: center;
+    width: 34px;
+    height: 34px;
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.pixel-cat-wrapper:hover {
+    transform: translateY(-4px) scale(1.2) rotate(5deg);
+}
+
+.pixel-cat-svg {
+    width: 100%;
+    height: 100%;
 }
 
 .subtitle {
-    font-size: 1rem;
-    font-style: italic;
-    color: var(--stack-color);
-    margin-bottom: 10px;
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+    color: var(--text-muted);
 }
 
-.social-links a {
-    color: var(--text-color);
-    text-decoration: underline;
+.prompt-arrow {
+    font-weight: bold;
 }
 
-section {
-    margin-bottom: 40px;
-}
-
+/* Section Headings */
 section h2 {
-    font-size: 1.3rem;
-    border-bottom: 1px solid var(--border-color);
-    padding-bottom: 5px;
-    margin-bottom: 15px;
-    font-weight: bold;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    border-bottom: 2px dashed var(--border-color);
+    padding-bottom: 4px;
+    margin-bottom: 16px;
+    text-shadow: 0 0 6px var(--glow-shadow);
 }
 
-/* Skills Grid Setup */
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 15px;
+/* Terminal Cards (Skills, Projects, Education) */
+.terminal-card {
+    background-color: var(--terminal-card-bg);
+    border: 2px solid var(--border-color);
+    padding: 18px;
+    margin-bottom: 18px;
+    border-radius: 4px;
+    box-shadow: 4px 4px 0px var(--border-color);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.skill-category {
-    margin-bottom: 10px;
+.terminal-card:hover {
+    transform: translate(-3px, -3px);
+    box-shadow: 7px 7px 0px var(--border-color);
 }
 
-.skill-category h4, .skill-category h5 {
-    font-size: 1rem;
-    font-weight: bold;
-    margin-bottom: 2px;
-}
-
-.project-card, .edu-category {
-    margin-bottom: 20px;
-}
-
-.project-card h3, .edu-category h3 {
-    font-size: 1.15rem;
-    font-weight: bold;
+.terminal-card h3, .terminal-card h4 {
+    font-size: 1.4rem;
+    margin-bottom: 6px;
 }
 
 .tech-stack {
-    font-size: 0.9rem;
-    font-style: italic;
-    color: var(--stack-color);
-    margin-bottom: 8px;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: var(--text-muted);
 }
 
-.tech-stack a {
-    color: var(--text-color);
-}
-
+/* Lists & Links */
 ul {
-    list-style-type: square;
-    padding-left: 20px;
+    list-style-type: none;
+    padding-left: 10px;
 }
 
 li {
-    margin-bottom: 5px;
-    font-size: 0.95rem;
-}
-
-/* Achievements Custom List Styling */
-.achievements-list li {
     margin-bottom: 8px;
+    position: relative;
+    padding-left: 18px;
 }
 
-.achievements-list a {
-    color: var(--text-color);
+li::before {
+    content: ">";
+    position: absolute;
+    left: 0;
+    color: var(--text-primary);
+    font-weight: bold;
 }
 
-/* Education Layout Styles */
-.edu-inst {
-    font-size: 1rem;
+a {
+    color: var(--text-primary);
+    text-decoration: underline;
+    transition: opacity 0.2s;
 }
 
-.edu-meta {
-    font-size: 0.9rem;
-    color: var(--stack-color);
+a:hover {
+    opacity: 0.8;
+    background-color: var(--border-color);
+    color: var(--bg-main);
+    text-decoration: none;
+}
+
+/* Grid Layouts */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 14px;
+}
+
+/* Buttons */
+.toggle-btn, .terminal-btn {
+    font-family: 'VT323', monospace;
+    background: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    padding: 4px 10px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: all 0.2s ease;
+}
+
+.toggle-btn:hover, .terminal-btn:hover {
+    background-color: var(--border-color);
+    color: var(--bg-main);
+}
+
+.cert-drive-link {
+    margin-bottom: 12px;
 }
 
 footer {
     text-align: center;
-    border-top: 1px solid var(--border-color);
-    padding-top: 20px;
-    margin-top: 5px;
-    font-size: 0.85rem;
-    color: var(--stack-color);
+    border-top: 2px dashed var(--border-color);
+    padding-top: 16px;
+    margin-top: 20px;
+    font-size: 1.1rem;
+    opacity: 0.8;
+}
+
+@media (max-width: 600px) {
+    .author-name {
+        font-size: 2rem;
+    }
+    .terminal-tabs {
+        font-size: 0.95rem;
+    }
 }
